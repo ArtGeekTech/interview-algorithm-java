@@ -4,15 +4,15 @@ public class TwoSumII {
         if (nums == null || nums.length < 2) {
             throw new IllegalArgumentException("No two sum solution");
         }
-        int start = 0, end = nums.length - 1;
-        while (start < end) {
-            int sum = nums[start] + nums[end];
+        int l = 0, r = nums.length - 1;
+        while (l < r) {
+            int sum = nums[l] + nums[r];
             if (sum < target) {
-                start++;
+                l++;
             } else if (sum > target) {
-                end--;
+                r--;
             } else {
-                return new int[] {start + 1, end + 1};
+                return new int[] {l + 1, r + 1};
             }
         }
         throw new IllegalArgumentException("No two sum solution");

@@ -7,13 +7,13 @@ public class TwoSumLessThanK {
             return -1;
         }
         Arrays.sort(nums);
-        int start = 0, end = nums.length - 1, sum = -1;
-        while (start < end) {
-            if (nums[start] + nums[end] < K) {
-                sum = Math.max(sum, nums[start] + nums[end]);
-                start++;
+        int l = 0, r = nums.length - 1, sum = -1;
+        while (l < r) {
+            if (nums[l] + nums[r] < K) {
+                sum = Math.max(sum, nums[l] + nums[r]);
+                l++;
             } else {
-                end--;
+                r--;
             }
         }
         return sum;
