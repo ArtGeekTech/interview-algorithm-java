@@ -1,7 +1,8 @@
 import java.util.Arrays;
 
 public class ThreeSumSmallerTripletCount {
-    public int threeSumSmaller(int[] nums, int target) {
+
+    public static int threeSumSmaller(int[] nums, int target) {
         if (nums == null || nums.length < 3) {
             return 0;
         }
@@ -9,14 +10,14 @@ public class ThreeSumSmallerTripletCount {
         final int sz = nums.length;
         int count = 0;
         for (int i = 0; i < sz; i++) {
-            int lo = i + 1, hi = sz - 1;
-            while (lo < hi) {
-                int sum = nums[i] + nums[lo] + nums[hi];
+            int start = i + 1, end = sz - 1;
+            while (start < end) {
+                int sum = nums[i] + nums[start] + nums[end];
                 if (sum < target) {
-                    count += hi - lo;
-                    lo++;
+                    count += end - start;
+                    start++;
                 } else {
-                    hi--;
+                    end--;
                 }
             }
         }

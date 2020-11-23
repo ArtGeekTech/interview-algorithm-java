@@ -3,7 +3,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ThreeSum {
-    public List<List<Integer>> threeSum(int[] nums) {
+
+    public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         if (nums == null || nums.length < 3) {
             return res;
@@ -14,20 +15,20 @@ public class ThreeSum {
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
-            int j = i + 1, k = len - 1;
-            while (j < k) {
-                int sum = nums[i] + nums[j] + nums[k];
+            int start = i + 1, end = len - 1;
+            while (start < end) {
+                int sum = nums[i] + nums[start] + nums[end];
                 if (sum < 0) {
-                    j++;
+                    start++;
                 } else if (sum > 0) {
-                    k--;
+                    end--;
                 } else {
-                    res.add(Arrays.asList(nums[i], nums[j++], nums[k--]));
-                    while (j < k && nums[j] == nums[j - 1]) {
-                        j++;
+                    res.add(Arrays.asList(nums[i], nums[start++], nums[end--]));
+                    while (start < end && nums[start] == nums[start - 1]) {
+                        start++;
                     }
-                    while (j < k && nums[k] == nums[k + 1]) {
-                        k--;
+                    while (start < end && nums[end] == nums[end + 1]) {
+                        end--;
                     }
                 }
             }

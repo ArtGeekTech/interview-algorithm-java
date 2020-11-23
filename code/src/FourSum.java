@@ -3,7 +3,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FourSum {
-    public List<List<Integer>> fourSum(int[] nums, int target) {
+
+    public static List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> res = new ArrayList<>();
         if (nums == null || nums.length < 4) {
             return res;
@@ -18,20 +19,20 @@ public class FourSum {
                 if (j > i + 1 && nums[j] == nums[j - 1]) {
                     continue;
                 }
-                int k = j + 1, l = len - 1;
-                while (k < l) {
-                    int sum = nums[i] + nums[j] + nums[k] + nums[l];
+                int start = j + 1, end = len - 1;
+                while (start < end) {
+                    int sum = nums[i] + nums[j] + nums[start] + nums[end];
                     if (sum < target) {
-                        k++;
+                        start++;
                     } else if (sum > target) {
-                        l--;
+                        end--;
                     } else {
-                        res.add(Arrays.asList(nums[i], nums[j], nums[k++], nums[l--]));
-                        while (k < l && nums[k] == nums[k - 1]) {
-                            k++;
+                        res.add(Arrays.asList(nums[i], nums[j], nums[start++], nums[end--]));
+                        while (start < end && nums[start] == nums[start - 1]) {
+                            start++;
                         }
-                        while (k < l && nums[l] == nums[l + 1]) {
-                            l--;
+                        while (start < end && nums[end] == nums[end + 1]) {
+                            end--;
                         }
                     }
                 }

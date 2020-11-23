@@ -1,17 +1,18 @@
 public class TwoSumII {
-    public int[] twoSum(int[] nums, int target) {
+
+    public static int[] twoSum(int[] nums, int target) {
         if (nums == null || nums.length < 2) {
             throw new IllegalArgumentException("No two sum solution");
         }
-        int lo = 0, hi = nums.length - 1;
-        while (lo < hi) {
-            int sum = nums[lo] + nums[hi];
+        int start = 0, end = nums.length - 1;
+        while (start < end) {
+            int sum = nums[start] + nums[end];
             if (sum < target) {
-                lo++;
+                start++;
             } else if (sum > target) {
-                hi--;
+                end--;
             } else {
-                return new int[] {lo + 1, hi + 1};
+                return new int[] {start + 1, end + 1};
             }
         }
         throw new IllegalArgumentException("No two sum solution");

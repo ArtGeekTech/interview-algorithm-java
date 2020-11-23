@@ -2,7 +2,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FourSumCountTuples {
-    public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
+
+    public static int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int a: A) {
             for (int b: B) {
