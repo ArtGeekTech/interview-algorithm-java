@@ -1,3 +1,5 @@
+import static agt.algo.Utils.swap;
+
 public class QuickSelect {
     public static int quickSelect(int[] arr, int start, int end, int k) {
         if (start == end) {
@@ -23,11 +25,5 @@ public class QuickSelect {
         }
         swap(arr, ++p, end);
         return p;
-    }
-
-    private static void swap(int[] arr, int i, int j) {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
     }
 }

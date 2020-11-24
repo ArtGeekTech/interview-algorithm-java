@@ -1,3 +1,7 @@
+import java.util.Arrays;
+
+import static agt.algo.Utils.swap;
+
 public class MoveZeroes {
     public static void moveZeroes(int[] nums) {
         if (nums == null || nums.length < 2) {
@@ -13,9 +17,9 @@ public class MoveZeroes {
         }
     }
 
-    private static void swap(int[] arr, int i, int j) {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
+    public static void main(String[] args) {
+        int[] arr = {0,2,0,0,1,3,9};
+        moveZeroes(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }

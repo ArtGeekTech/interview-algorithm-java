@@ -1,3 +1,5 @@
+import static agt.algo.Utils.swap;
+
 public class QuickSort {
 
     public static void sort(int[] arr) {
@@ -29,9 +31,5 @@ public class QuickSort {
         return p;
     }
 
-    private static void swap(int[] arr, int i, int j) {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
-    }
+
 }

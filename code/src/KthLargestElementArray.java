@@ -1,3 +1,5 @@
+import static Utils.swap;
+
 public class KthLargestElementArray {
     public static int findKthLargest(int[] nums, int k) {
         if (nums == null || nums.length < k) {
@@ -31,11 +33,5 @@ public class KthLargestElementArray {
         }
         swap(arr, ++p, end);
         return p;
-    }
-
-    private static void swap(int[] arr, int i, int j) {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
     }
 }
