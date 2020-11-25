@@ -1,9 +1,19 @@
-public class BinarySearch {
-    public static int search(int[] nums, int target) {
+public class SearchInsertPosition {
+
+    public static int searchInsert(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return -1;
         }
-        int start = 0, end = nums.length - 1;
+
+        final int sz = nums.length;
+        if (target < nums[0]) {
+            return 0;
+        }
+        if (target > nums[sz - 1]) {
+            return sz;
+        }
+
+        int start = 0, end = sz - 1;
         while (start + 1 < end) {
             int mid = start + (end - start) / 2;
             if (nums[mid] < target) {
@@ -15,12 +25,6 @@ public class BinarySearch {
             }
         }
 
-        if (nums[start] == target) {
-            return start;
-        }
-        if (nums[end] == target) {
-            return end;
-        }
-        return -1;
+        return nums[start] == target ? start : end;
     }
 }
