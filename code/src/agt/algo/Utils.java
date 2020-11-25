@@ -6,4 +6,12 @@ public class Utils {
         arr[i] = arr[j];
         arr[j] = tmp;
     }
+
+    public static int getMax(int[] nums) {
+        int max = 0;
+        for (int num: nums) {
+            max = Math.max(max, num);
+        }
+        return max;
+    }
 }

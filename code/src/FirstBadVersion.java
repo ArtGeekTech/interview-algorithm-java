@@ -3,9 +3,9 @@ public class FirstBadVersion {
         if (n < 1) {
             throw new IllegalArgumentException();
         }
-        int start = 1, end = n, mid = 0;
+        int start = 1, end = n;
         while (start + 1 < end) {
-            mid = start + (end - start) / 2;
+            int mid = start + (end - start) / 2;
             if (isBadVersion(mid)) {
                 end = mid;
             } else {
