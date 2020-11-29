@@ -15,7 +15,7 @@ public class Main {
         i *= 5;
         System.out.println(i);
         String s = "";
-        HashSet;
+//        HashSet;
 
         s.hashCode();
     }
