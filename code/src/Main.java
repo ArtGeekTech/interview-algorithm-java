@@ -12,7 +12,11 @@ public class Main {
         System.out.println(-3 % -4);
         System.out.println("Hello");
         Object o = new Object();
+        int i = 4;
+        i *= 5;
+        System.out.println(i);
         String s = "";
+
         s.hashCode();
     }
 }
