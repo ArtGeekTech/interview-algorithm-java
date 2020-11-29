@@ -55,8 +55,7 @@ public class MyHashMap {
 
         ListIterator<Entry> iter = bucket.listIterator();
         while (iter.hasNext()) {
-            Entry next = iter.next();
-            if (next.key == key) {
+            if (iter.next().key == key) {
                 iter.remove();
                 return;
             }
