@@ -1,4 +1,4 @@
-public class FindMinimumRotatedSortedArray {
+public class FindMinimumRotatedSortedArrayII {
 
     public static int findMin(int[] nums) {
         if (nums == null || nums.length == 0) {
@@ -17,7 +17,7 @@ public class FindMinimumRotatedSortedArray {
             } else if (nums[start] > nums[mid]) {
                 end = mid;
             } else {
-                throw new IllegalArgumentException();
+                start++;
             }
         }
 
