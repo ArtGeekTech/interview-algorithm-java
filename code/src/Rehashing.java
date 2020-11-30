@@ -1,5 +1,3 @@
-import static agt.algo.Utils.ListNode;
-
 public class Rehashing {
     /**
      * @param hashTable: A list of The first node of linked list
