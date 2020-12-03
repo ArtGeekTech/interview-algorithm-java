@@ -3,6 +3,9 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         List<Integer> list1 = new LinkedList<>();
+        list1.add(1);
+        list1.add(1);
+        System.out.println(list1);
         List<Integer> list2 = Arrays.asList(1, 2, 3);
         List<Integer> list3 = new ArrayList<>();
         System.out.println(4 % 3);
