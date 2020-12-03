@@ -14,9 +14,9 @@ public class MyHashMap {
         }
     }
 
+    private static final float LOAD_FACTOR = 0.75f;
     private List<Entry>[] buckets;
     private int capacity = 16;
-    private float loadFactor = 0.75f;
     private int size;
 
     /** Initialize your data structure here. */
@@ -26,9 +26,6 @@ public class MyHashMap {
 
     /** value will always be non-negative. */
     public void put(int key, int value) {
-        if (size >= capacity * loadFactor) {
-            rehash();
-        }
         List<Entry> bucket = getBucket(key, buckets);
         Entry entry = getEntry(key, bucket);
         if (entry != null) {
@@ -36,6 +33,9 @@ public class MyHashMap {
         } else {
             bucket.add(new Entry(key, value));
             size++;
+            if (size >= capacity * LOAD_FACTOR) {
+                rehash();
+            }
         }
     }
 
@@ -49,10 +49,6 @@ public class MyHashMap {
     /** Removes the mapping of the specified value key if this map contains a mapping for the key */
     public void remove(int key) {
         List<Entry> bucket = getBucket(key, buckets);
-        if (bucket == null) {
-            return;
-        }
-
         ListIterator<Entry> iter = bucket.listIterator();
         while (iter.hasNext()) {
             if (iter.next().key == key) {
@@ -65,7 +61,7 @@ public class MyHashMap {
     private List<Entry> getBucket(int key, List<Entry>[] buckets) {
         int idx = hash(key);
         if (buckets[idx] == null) {
-            buckets[idx] = new LinkedList<Entry>();
+            buckets[idx] = new LinkedList<>();
         }
         return buckets[idx];
     }

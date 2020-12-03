@@ -14,6 +14,7 @@ public class Main {
         int i = 4;
         i *= 5;
         System.out.println(i);
+        HashMap map = new HashMap();
         String s = "";
 //        HashSet;
 

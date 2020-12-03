@@ -61,8 +61,8 @@ public class MyLinkedList {
     }
 
     private ListNode getNodeAtIndex(int index) {
-        ListNode node = head.next;
-        while (index-- > 0) {
+        ListNode node = head;
+        while (index-- >= 0) {
             node = node.next;
         }
         return node;
