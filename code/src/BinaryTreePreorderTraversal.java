@@ -3,15 +3,15 @@ import java.util.List;
 
 public class BinaryTreePreorderTraversal {
     public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> rtn = new ArrayList<>();
-        preorder(root, rtn);
-        return rtn;
+        List<Integer> res = new ArrayList<>();
+        preorder(root, res);
+        return res;
     }
 
-    private void preorder(TreeNode root, List<Integer> rtn) {
+    private void preorder(TreeNode root, List<Integer> res) {
         if (root == null) return;
-        rtn.add(root.val);
-        preorder(root.left, rtn);
-        preorder(root.right, rtn);
+        res.add(root.val);
+        preorder(root.left, res);
+        preorder(root.right, res);
     }
 }
