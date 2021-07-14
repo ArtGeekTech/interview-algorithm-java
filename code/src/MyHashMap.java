@@ -21,7 +21,7 @@ public class MyHashMap {
 
     /** Initialize your data structure here. */
     public MyHashMap() {
-        buckets = new List[capacity];
+        buckets = (List<Entry>[]) new List[capacity];
     }
 
     /** value will always be non-negative. */
